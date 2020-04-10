@@ -11,6 +11,9 @@ export default ({
 		return {
 			title: 'lessonFour'
 		}
+	},
+	mounted() {
+		
 	}
 });
 </script>

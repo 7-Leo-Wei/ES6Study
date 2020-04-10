@@ -53,10 +53,35 @@ export default ({
 			this.drawer.isShow = false;
 			document.body.scrollTop = 0;
 			document.documentElement.scrollTop = 0;
+		},
+		checkStr(str) {
+			let strArr = str.split('//');
+			let strRes = '';
+			strArr.forEach( function(element, index) {
+				if (index) {
+					let n = element.indexOf('\n');
+					let eleStr = element.slice(0, n);
+					let newStr = ` <span>// ${eleStr}</span>`;
+					element = newStr+element.slice(n);
+				}
+				strRes += element;
+			});
+			return strRes;
+		},
+		checkCode(str) {
+			let codeArr = str.split(" ");
+			let codeRes = '';
+			codeArr.forEach( function(element, index) {
+				if (index%2 === 1) {
+					element = ` <code>${element}</code>`;
+				}
+				codeRes += element;
+			});
+			return codeRes;
 		}
 	},
 	mounted() {
-
+		
 	}
 });
 </script>

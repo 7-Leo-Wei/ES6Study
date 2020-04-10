@@ -645,42 +645,17 @@ export default({
 		}
 	},
 	methods: {
-		checkStr(str) {
-			let strArr = str.split('//');
-			let strRes = '';
-			strArr.forEach( function(element, index) {
-				if (index) {
-					let n = element.indexOf('\n');
-					let eleStr = element.slice(0, n);
-					let newStr = ` <span>// ${eleStr}</span>`;
-					element = newStr+element.slice(n);
-				}
-				strRes += element;
-			});
-			return strRes;
-		},
-		checkCode(str) {
-			let codeArr = str.split(" ");
-			let codeRes = '';
-			codeArr.forEach( function(element, index) {
-				if (index%2 === 1) {
-					element = ` <code>${element}</code>`;
-				}
-				codeRes += element;
-			});
-			return codeRes;
-		}
 	},
 	mounted() {
 		let _this = this;
 		$(".codejs pre").each(function() {
 			let str = $(this).text();
-			let newStr = _this.checkStr(str);
+			let newStr = _this.$parent.checkStr(str);
 			$(this).html(newStr);
 		});
 		$(".words p.codep").each(function(index, el) {
 			let str = $(this).html();
-			let newStr = _this.checkCode(str);
+			let newStr = _this.$parent.checkCode(str);
 			$(this).html(newStr);
 		});
 	}
