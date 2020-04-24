@@ -620,19 +620,7 @@ for (let [,value] of map) {
 const { SourceMapConsumer, SourceNode } = require("source-map");
 </pre>
 			</div>
-
-
-
-
-
 		</div>
-
-<p class="codep"></p>
-			<div class="codejs">
-<pre>
-
-</pre>
-			</div>
 	</div>
 </template>
 
@@ -660,15 +648,4 @@ export default({
 		});
 	}
 });
-let obj1 = {
-	a: '',
-	b: '',
-	c: ''
-}
-let obj2 = {
-	a: 1,
-	b: 2
-}
-obj1 = obj2;
-obj1.c
 </script>

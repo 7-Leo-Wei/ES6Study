@@ -41,7 +41,7 @@ export default ({
 				name: '变量的解构赋值',
 				path: '/LessonThr',
 			}, {
-				name: '字符的 Unicode 表示法',
+				name: '字符串的扩展',
 				path: '/LessonFour',
 			}],
 			lessonName: 'ECMAScript 6 简介',
